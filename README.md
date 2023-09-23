@@ -7,3 +7,5 @@
 
 1. Reusing types
    -Create Atomic types and reuse in complex type definitions
+   -Type Inference
+   -Type Assertion
