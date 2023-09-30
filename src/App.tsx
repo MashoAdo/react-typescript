@@ -1,13 +1,16 @@
 import './App.css';
-import Container from './components/Container';
-import Counter from './components/state/Counter';
+import ThemeProvider from './components/context/ThemeProvider';
+import UserCtx from './components/context/User';
+import UserContextProvider from './components/context/UserProvider';
 
 function App() {
   return (
     <div className="App">
-      <Container styles={{ border: '2px solid red', padding: '1rem' }}>
-        <Counter />
-      </Container>
+      <UserContextProvider>
+        <ThemeProvider>
+          <UserCtx />
+        </ThemeProvider>
+      </UserContextProvider>
     </div>
   );
 }
