@@ -1,12 +1,12 @@
 import './App.css';
 import Container from './components/Container';
-import LoggedIn from './components/state/LoggedIn';
+import Counter from './components/state/Counter';
 
 function App() {
   return (
     <div className="App">
       <Container styles={{ border: '2px solid red', padding: '1rem' }}>
-        <LoggedIn />
+        <Counter />
       </Container>
     </div>
   );

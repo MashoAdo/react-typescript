@@ -5,6 +5,9 @@ type AuthUser = {
   email: string;
 };
 
+//Explicit type definition and allowing multiple types e.g AuthUser | null type
+//Typescript won't allow direct access of user properties without optional chaining...
+//because user can be null
 function User() {
   const [user, setUser] = useState<AuthUser | null>(null);
 
