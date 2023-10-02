@@ -10,7 +10,7 @@ type AuthUser = {
 //that will have the same properties as AuthUser type
 //Thus there is no optional chaining needed when accessing user state properties unlike in /src/components/state/User.tsx
 function User1() {
-  const [user, setUser] = useState<AuthUser>({} as AuthUser);
+  const [user, setUser] = useState({} as AuthUser);
 
   const handleLogin = () => setUser({ name: 'polly', email: 'polly@g.com' });
   return (

@@ -1,7 +1,7 @@
 import './App.css';
 import ThemeProvider from './components/context/ThemeProvider';
 import UserCtx from './components/context/User';
-import UserContextProvider from './components/context/UserProvider';
+import { UserContextProvider } from './components/context/UserProvider';
 
 function App() {
   return (

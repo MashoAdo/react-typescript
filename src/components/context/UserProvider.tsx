@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
 type AuthUser = {
   name: string;
@@ -8,22 +9,33 @@ type AuthUser = {
 type UserContextType = {
   user: AuthUser | null;
   setUser: React.Dispatch<React.SetStateAction<AuthUser | null>>;
+  isLoading: boolean;
+  toggleLoading: () => void;
 };
 
 type UserContextProps = {
   children: React.ReactNode;
 };
 
-export const UserContext = createContext<UserContextType>({} as UserContextType);
+const UserContext = createContext({} as UserContextType);
 
 function UserContextProvider({ children }: UserContextProps) {
   const [user, setUser] = useState<AuthUser | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const toggleLoading = () => setIsLoading(!isLoading);
 
   const values = {
     user,
+    isLoading,
     setUser,
+    toggleLoading,
   };
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>;
 }
 
-export default UserContextProvider;
+UserContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export { UserContext, UserContextProvider };

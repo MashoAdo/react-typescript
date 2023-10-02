@@ -3,7 +3,6 @@ import { UserContext } from './UserProvider';
 
 const UserCtx = () => {
   const { setUser, user } = useContext(UserContext);
-
   const handleLogin = () => {
     setUser({
       name: 'naipa',
